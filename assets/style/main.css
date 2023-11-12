@@ -251,6 +251,13 @@ video {
   border-radius: 0;
   padding: 0;
 }
+.modal-window_calculator .modal-window__wrapper {
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
+}
+.modal-window_calculator .modal-window__wrapper_zero {
+  min-height: 45rem;
+}
 .modal-window__title {
   max-width: 35.85713rem;
   font-weight: 700;
@@ -4122,6 +4129,11 @@ swiper-container {
   }
   .footer__soc-img {
     width: 50px;
+  }
+  .modal-window_tasks .modal-window__wrapper,
+  .modal-window_feedbacks .modal-window__wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 @media all and (max-width: 374px){

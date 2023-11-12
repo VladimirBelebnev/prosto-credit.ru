@@ -68,6 +68,11 @@ feedbackOpenBtn.addEventListener("click", (event) => {
     event.preventDefault();
 });
 
+document.querySelector(".achivements-2__subtitle_link").addEventListener("click", (event) => {
+    openModal(feedbackModal);
+    event.preventDefault();
+});
+
 feedbackCloseBtn.addEventListener("click", (event) => {
     hiddenModal(feedbackModal);
     event.preventDefault();
@@ -189,7 +194,7 @@ dropDownModalBtn.addEventListener("click", (event) => {
 });
 document.querySelector(".calculator__btn").addEventListener("click", () => {
     modalWindows.forEach(item => item.classList.add("hidden"));
-    document.querySelector("#modal-thank").classList.remove("hidden");
+    document.querySelector("#modal-main").classList.remove("hidden");
 });
 
 // tabButtons.forEach((item) => {
