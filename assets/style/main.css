@@ -236,6 +236,11 @@ video {
   border-radius: 40px;
   padding: 6.25rem 6.25rem 4.56rem;
 }
+.modal-window_first .modal-window__wrapper {
+  min-height: 66.5vh;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+}
 .modal-window__wrapper_zero {
   width: 107.5rem;
   max-width: 107.5rem;
@@ -466,6 +471,10 @@ video {
   padding: 3.56rem 2.38rem 3rem 2.38rem;
   background: #F7F7F7;
   overflow-y: auto;
+}
+
+.modal-window_tasks .modal-window__wrapper {
+  padding-top: 6rem;
 }
 
 .input {
@@ -2775,8 +2784,14 @@ swiper-container {
   .footer__soc-links {
     margin-top: 1.5rem !important;
   }
-  .modal-window_tasks .modal-window__wrapper {
+  .modal-window_tasks .modal-window__wrapper,
+  .modal-window_feedbacks .modal-window__wrapper {
     min-width: 100%;
+  }
+
+  .modal-window_calculator .modal-window__wrapper {
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 @media all and (max-width: 1250px) {
@@ -3786,9 +3801,6 @@ swiper-container {
   .block_new .item_tr {
     margin-bottom: 20px;
   }
-  .calculator.calc_1 {
-    top: -20px;
-  }
   .product__column:last-child {
     flex-direction: column;
     width: 100%;
@@ -4334,7 +4346,6 @@ gap: 25px;
 .blog__img {
   width: 49.625rem;
 }
-
 @media (max-width: 998px) {
   .blog__column {
     width: 100%;

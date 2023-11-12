@@ -24,6 +24,12 @@ const tasksOpenBtn = document.querySelector(".footer__link_tasks");
 const tasksCloseBtn = document.querySelector(".modal_close-tasks");
 const tasksModal = document.querySelector(".modal-window_tasks");
 
+// Tabs Variables
+
+const tabButtons = document.querySelectorAll(".product__btn-1");
+const tabButtons2 = document.querySelectorAll(".calculator__skip-btn");
+const tabElements = document.querySelectorAll(".calculator");
+
 // Functions
 
 function toggleSpoilers(element) {
@@ -82,36 +88,36 @@ tasksCloseBtn.addEventListener("click", (event) => {
     hiddenModal(tasksModal);
     event.preventDefault();
 });
-// toggleButtons.forEach((item) => {
-//     item.addEventListener("click", (event) => {
-//         const clickedBtn = event.currentTarget;
-//         const toggleElement = clickedBtn.nextElementSibling;
-//         const arrow = clickedBtn.children[1].children[0];
+toggleButtons.forEach((item) => {
+    item.addEventListener("click", (event) => {
+        const clickedBtn = event.currentTarget;
+        const toggleElement = clickedBtn.nextElementSibling;
+        const arrow = clickedBtn.children[1].children[0];
 
-//         let content = clickedBtn.nextElementSibling;
-//         // console.log(clickedBtn.nextElementSibling)
-//         if (content.style.maxHeight) {
-//             //this is if the accordion is open
-//             content.style.maxHeight = null;
-//             content.classList.remove("is-open");
-//         } else {
-//             //if the accordion is currently closed
-//             content.style.maxHeight = content.scrollHeight + "px";
-//             content.classList.add("is-open");
+        let content = clickedBtn.nextElementSibling;
+        // console.log(clickedBtn.nextElementSibling)
+        if (content.style.maxHeight) {
+            //this is if the accordion is open
+            content.style.maxHeight = null;
+            content.classList.remove("is-open");
+        } else {
+            //if the accordion is currently closed
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.classList.add("is-open");
 
-//             hiddenSpoilers.forEach((item) => {
-//                 if (item != toggleElement) {
-//                     item.style.maxHeight = null;
-//                     item.previousElementSibling.children[1].children[0].classList.remove(
-//                         "question__btn-img_active"
-//                     );
-//                 }
-//             });
-//             toggleSpoilers(toggleElement);
-//         }
-//         toggleArrow(arrow, "question__btn-img_active");
-//     });
-// });
+            hiddenSpoilers.forEach((item) => {
+                if (item != toggleElement) {
+                    item.style.maxHeight = null;
+                    item.previousElementSibling.children[1].children[0].classList.remove(
+                        "question__btn-img_active"
+                    );
+                }
+            });
+            toggleSpoilers(toggleElement);
+        }
+        toggleArrow(arrow, "question__btn-img_active");
+    });
+});
 modalOpenButtons.forEach((item) => {
     item.addEventListener("click", (event) => {
         modalWindowFirst.classList.remove("hidden");
