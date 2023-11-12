@@ -93,18 +93,21 @@
 					<section class="flex header__right-section">
 						<nav class="header__nav">
 							<ul class="flex header__link-list">
-								<li class="header__link-item"> <a href="#first-link" class="header__link"> Займы </a>
+								<li class="header__link-item"> <a href="#intro" class="header__link"> Главная </a>
 								</li>
-								<li class="header__link-item"> <a href="#second-link" class="header__link">
-										Рефинансирование
+								<li class="header__link-item"> <a href="#achivements" class="header__link">
+										Почему мы?
 									</a> </li>
-								<li class="header__link-item"> <a href="#third-link" class="header__link"> Перезалог
+								<li class="header__link-item"> <a href="#products" class="header__link"> Продукты
 									</a> </li>
-								<li class="header__link-item"> <a
+								<li class="header__link-item">
+									<!-- <a
 										href="https://yandex.uz/profile/1120413961?intent=reviews&utm_source=badge&utm_medium=rating&utm_campaign=v1"
 										class="header__link">
 										Отзывы <mark class="header__link_marked">Яндекс</mark>
-									</a> </li>
+									</a> -->
+									<a href="#blog" class="header__link"> Вконтакте</a>
+								</li>
 							</ul>
 						</nav>
 						<address class="flex header__contacts">
@@ -281,103 +284,6 @@
 									<section class="product__column"> <a href="#" class="product__btn-1"> калькулятор
 										</a> <a href="#" class="product__btn-2"> проверить одобрение </a> </section>
 								</section>
-								<div class="calculator calc_1 none">
-									<section class="calculator__row">
-										<section class="calculator__column">
-											<button class="calculator__skip-btn"> <img src="assets/images/st.svg"
-													alt="" /> Назад </button>
-											<div class="calculator-input calculator__input calculator__input_first">
-												<h5 class="calculator-input__title  mob_pre1">
-													Желаемая сумма кредита
-												</h5>
-												<section class="calculator-input__top-section">
-													<h5 class="calculator-input__title mob_pre2">
-														Желаемая сумма кредита
-													</h5>
-													<input id="input-1" type="text"
-														class="calculator-input__sum wanted_sum"
-														data-inputmask="'alias': 'currency'" value="150 000 ₽"
-														max="25000000" max="25000000" name="values" />
-
-													<input type="range" class="calculator-input__range" step="50000"
-														min="150000" max="25000000" value="150000" id="price" />
-													<div class="range-fill" style="width: 0%;"></div>
-												</section>
-
-												<section class="calculator-input__bottom-section calc_desctop_v"> <span
-														class="calculator-input__value"> 150 тыс </span> <span
-														class="calculator-input__value">
-														12 млн.
-													</span> <span class="calculator-input__value"> 25 млн. </span>
-												</section>
-											</div>
-											<div class="calculator-input calculator__input">
-												<h5 class="calculator-input__title mob_pre1">
-													Срок кредита
-												</h5>
-												<section class="calculator-input__top-section">
-													<h5 class="calculator-input__title mob_pre2">
-														Срок кредита
-													</h5> <span class="calculator-input__sum"> 10 лет</span>
-
-													<input type="range" class="calculator-input__range" step="1" min="1"
-														max="25" value="10" id="month" />
-													<div class="range-fill" style="width: 39%;"></div>
-
-												</section>
-												<section class="calculator-input__bottom-section calc_desctop_v"> <span
-														class="calculator-input__value"> 1 год</span> <span
-														class="calculator-input__value"> 12 лет </span> <span
-														class="calculator-input__value"> 25 лет </span> </section>
-											</div>
-										</section>
-										<section class="calculator__column calculator__column-result">
-											<div class="calculator__offer">
-												<div class="calculator__offer-row">
-													<p class="calculator__offer-text">Вы выбрали кредит на сумму:</p>
-													<p class="calculator__offer-text text_answer" id="sum"> 150 000 ₽
-													</p>
-												</div>
-												<div class="calculator__offer-row">
-													<p class="calculator__offer-text"> На срок: </p>
-													<p class="calculator__offer-text text_answer" id="time"> 10 лет</p>
-												</div>
-												<div class="calculator__offer-row">
-													<p class="calculator__offer-text"> Ежемесячный платеж составит: </p>
-													<p class="calculator__offer-text text_answer" id="amount-1">2 066 ₽
-													</p>
-												</div>
-												<!-- <div class="calculator__offer-row calc_desctop_v">
-                          <p class="calculator__offer-text">Ставка</p>
-                          <p class="calculator__offer-text" id="amount-2">
-                            17%
-                          </p>
-                        </div> -->
-											</div>
-										</section>
-									</section>
-									<section class="calculator__row">
-										<section class="calculator__column">
-											<p class="calculator__offer-text"> Цель кредита </p>
-											<select class="aim-select">
-												<option value="" hidden>Выбрать</option>
-												<option value="Рефинансирование">Рефинансирование</option>
-												<option value="Перезалог">Перезалог</option>
-												<option value="Покупка недвижимости">Покупка недвижимости</option>
-												<option value="Ремонт">Ремонт</option>
-												<option value="Покупка автомобиля">Покупка автомобиля</option>
-												<option value="Лечение">Лечение</option>
-												<option value="Развитие бизнеса">Развитие бизнеса</option>
-												<option value="Путешествие">Путешествие</option>
-												<option value="Срочно нужны деньги">Срочно нужны деньги</option>
-												<option value="Иное">Иное</option>
-											</select>
-										</section>
-										<section class="calculator__column">
-											<button class="calculator__btn"> проверить одобрение </button>
-										</section>
-									</section>
-								</div>
 							</article>
 							<article class="product" id="second-link" data-aos="fade-up"
 								data-aos-anchor-placement="center-bottom">
@@ -413,101 +319,6 @@
 									<section class="product__column"> <a href="#" class="product__btn-1"> калькулятор
 										</a> <a href="#" class="product__btn-2"> проверить одобрение </a> </section>
 								</section>
-
-								<div class="calculator calc_2 none">
-									<section class="calculator__row">
-										<section class="calculator__column">
-											<button class="calculator__skip-btn"> <img src="assets/images/st.svg"
-													alt="" /> Назад </button>
-											<div class="calculator-input calculator__input calculator__input_first">
-												<h5 class="calculator-input__title  mob_pre1">
-													Желаемая сумма кредита
-												</h5>
-												<section class="calculator-input__top-section">
-													<h5 class="calculator-input__title mob_pre2">
-														Желаемая сумма кредита
-													</h5>
-													<input id="input-2" type="text"
-														class="calculator-input__sum wanted_sum"
-														data-inputmask="'alias': 'currency'" value="150 000 ₽"
-														max="25000000" />
-													<input type="range" class="calculator-input__range" step="50000"
-														min="150000" max="25000000" value="150000" id="price-1" />
-													<div class="range-fill" style="width: 0%;"></div>
-												</section>
-												<section class="calculator-input__bottom-section calc_desctop_v"> <span
-														class="calculator-input__value"> 150 тыс </span> <span
-														class="calculator-input__value">
-														12 млн.
-													</span> <span class="calculator-input__value"> 25 млн. </span>
-												</section>
-											</div>
-											<div class="calculator-input calculator__input">
-												<h5 class="calculator-input__title mob_pre1">
-													Срок кредита
-												</h5>
-												<section class="calculator-input__top-section">
-													<h5 class="calculator-input__title mob_pre2">
-														Срок кредита
-													</h5> <span class="calculator-input__sum"> 10 лет</span>
-													<input type="range" class="calculator-input__range" step="1" min="1"
-														max="25" value="10" id="month-1" />
-													<div class="range-fill" style="width: 39%;"></div>
-												</section>
-												<section class="calculator-input__bottom-section calc_desctop_v"> <span
-														class="calculator-input__value"> 1 год</span> <span
-														class="calculator-input__value"> 12 лет </span> <span
-														class="calculator-input__value"> 25 лет </span> </section>
-											</div>
-										</section>
-										<section class="calculator__column calculator__column-result">
-											<div class="calculator__offer">
-												<div class="calculator__offer-row">
-													<p class="calculator__offer-text">Вы выбрали кредит на сумму:</p>
-													<p class="calculator__offer-text text_answer" id="sum-1"> 150 000
-														₽ </p>
-												</div>
-												<div class="calculator__offer-row">
-													<p class="calculator__offer-text"> На срок: </p>
-													<p class="calculator__offer-text text_answer" id="time-1"> 10 лет
-													</p>
-												</div>
-												<div class="calculator__offer-row">
-													<p class="calculator__offer-text"> Ежемесячный платеж составит: </p>
-													<p class="calculator__offer-text text_answer" id="amount-1-1">2 066
-														₽</p>
-												</div>
-												<!-- <div class="calculator__offer-row calc_desctop_v">
-                          <p class="calculator__offer-text">Ставка</p>
-                          <p class="calculator__offer-text" id="amount-2">
-                            17%
-                          </p>
-                        </div> -->
-											</div>
-										</section>
-									</section>
-									<section class="calculator__row">
-										<section class="calculator__column">
-											<p class="calculator__offer-text"> Цель кредита </p>
-											<select class="aim-select">
-												<option value="" hidden>Выбрать</option>
-												<option value="Рефинансирование">Рефинансирование</option>
-												<option value="Перезалог">Перезалог</option>
-												<option value="Покупка недвижимости">Покупка недвижимости</option>
-												<option value="Ремонт">Ремонт</option>
-												<option value="Покупка автомобиля">Покупка автомобиля</option>
-												<option value="Лечение">Лечение</option>
-												<option value="Развитие бизнеса">Развитие бизнеса</option>
-												<option value="Путешествие">Путешествие</option>
-												<option value="Срочно нужны деньги">Срочно нужны деньги</option>
-												<option value="Иное">Иное</option>
-											</select>
-										</section>
-										<section class="calculator__column">
-											<button class="calculator__btn"> проверить одобрение </button>
-										</section>
-									</section>
-								</div>
 							</article>
 							<article class="product" id="third-link" data-aos="fade-up"
 								data-aos-anchor-placement="center-bottom">
@@ -541,100 +352,6 @@
 									<section class="product__column"> <a href="#" class="product__btn-1"> калькулятор
 										</a> <a href="#" class="product__btn-2"> проверить одобрение </a> </section>
 								</section>
-								<div class="calculator  none">
-									<section class="calculator__row">
-										<section class="calculator__column">
-											<button class="calculator__skip-btn"> <img src="assets/images/st.svg"
-													alt="" /> Назад </button>
-											<div class="calculator-input calculator__input calculator__input_first">
-												<h5 class="calculator-input__title  mob_pre1">
-													Желаемая сумма кредита
-												</h5>
-												<section class="calculator-input__top-section">
-													<h5 class="calculator-input__title mob_pre2">
-														Желаемая сумма кредита
-													</h5>
-													<input type="text" id="input-3"
-														class="calculator-input__sum wanted_sum"
-														data-inputmask="'alias': 'currency'" value="150 000 ₽"
-														max="25000000" />
-													<input type="range" class="calculator-input__range" step="50000"
-														min="150000" max="25000000" value="150000" id="price-2" />
-													<div class="range-fill" style="width: 0%;"></div>
-												</section>
-												<section class="calculator-input__bottom-section calc_desctop_v"> <span
-														class="calculator-input__value"> 150 тыс </span> <span
-														class="calculator-input__value">
-														12 млн.
-													</span> <span class="calculator-input__value"> 25 млн. </span>
-												</section>
-											</div>
-											<div class="calculator-input calculator__input">
-												<h5 class="calculator-input__title mob_pre1">
-													Срок кредита
-												</h5>
-												<section class="calculator-input__top-section">
-													<h5 class="calculator-input__title mob_pre2">
-														Срок кредита
-													</h5> <span class="calculator-input__sum"> 10 лет</span>
-													<input type="range" class="calculator-input__range" step="1" min="1"
-														max="25" value="10" id="month-2" />
-													<div class="range-fill" style="width: 39%;"></div>
-												</section>
-												<section class="calculator-input__bottom-section calc_desctop_v"> <span
-														class="calculator-input__value"> 1 год</span> <span
-														class="calculator-input__value"> 12 лет </span> <span
-														class="calculator-input__value"> 25 лет </span> </section>
-											</div>
-										</section>
-										<section class="calculator__column calculator__column-result">
-											<div class="calculator__offer">
-												<div class="calculator__offer-row">
-													<p class="calculator__offer-text">Вы выбрали кредит на сумму:</p>
-													<p class="calculator__offer-text text_answer" id="sum-2"> 150 000
-														₽ </p>
-												</div>
-												<div class="calculator__offer-row">
-													<p class="calculator__offer-text"> На срок: </p>
-													<p class="calculator__offer-text text_answer" id="time-2"> 10 лет
-													</p>
-												</div>
-												<div class="calculator__offer-row">
-													<p class="calculator__offer-text"> Ежемесячный платеж составит: </p>
-													<p class="calculator__offer-text text_answer" id="amount-1-2">2 066
-														₽</p>
-												</div>
-												<!-- <div class="calculator__offer-row calc_desctop_v">
-                          <p class="calculator__offer-text">Ставка</p>
-                          <p class="calculator__offer-text" id="amount-2">
-                            17%
-                          </p>
-                        </div> -->
-											</div>
-										</section>
-									</section>
-									<section class="calculator__row">
-										<section class="calculator__column">
-											<p class="calculator__offer-text"> Цель кредита </p>
-											<select class="aim-select">
-												<option value="" hidden>Выбрать</option>
-												<option value="Рефинансирование">Рефинансирование</option>
-												<option value="Перезалог">Перезалог</option>
-												<option value="Покупка недвижимости">Покупка недвижимости</option>
-												<option value="Ремонт">Ремонт</option>
-												<option value="Покупка автомобиля">Покупка автомобиля</option>
-												<option value="Лечение">Лечение</option>
-												<option value="Развитие бизнеса">Развитие бизнеса</option>
-												<option value="Путешествие">Путешествие</option>
-												<option value="Срочно нужны деньги">Срочно нужны деньги</option>
-												<option value="Иное">Иное</option>
-											</select>
-										</section>
-										<section class="calculator__column">
-											<button class="calculator__btn"> проверить одобрение </button>
-										</section>
-									</section>
-								</div>
 							</article>
 						</section>
 					</div>
@@ -695,165 +412,6 @@
 					</div>
 				</section>
 				<!-- Achivements-2 End -->
-				<section class="feedbacks feedbacks_mobile" id="feedbacks">
-					<div class="container">
-						<header class="section-header feedbacks__header">
-							<h2 class="title section-header__title">отзывы наших клиентов</h2>
-						</header>
-						<section class="swiper feedbacks__slider">
-							<div class="swiper-wrapper feedbacks__slider-wrapper">
-								<article class="swiper-slide feedback feedbacks__slide">
-									<section class="feedback__row feedback__row_user">
-										<div class="feedback__img-section"> <img src="assets/images/user-img-1.png"
-												alt="" class="feedback__avatar-img" /> </div>
-										<div class="feedback__user-section">
-											<h5 class="feedback__user-name">Александр Самуйленков</h5>
-											<p class="feedback__user-role">Знаток города 5 уровня</p>
-										</div>
-									</section>
-									<section class="feedback__row">
-										<div class="feedback__rate"> <img src="assets/images/rate-img.svg" alt=""
-												class="feedback__rate-img" /> <span class="feedback__date"> 14 декабря
-												2022 </span> </div>
-										<p class="feedback__text"> В моей довольно непростой ситуации реальную помощь я
-											получил только здесь (при всем обилии брокерских услуг в Москве). Крайне
-											оперативно, максимально дружелюбно, открыто. Начиная от сбора справок,
-											заканчивая подписанием договора с банком. Содействие и поддержка на каждом
-											шагу. Не только в рамках договора, но и в чисто бытовых, человеческих
-											моментах. Несомненно, Максим заслуживает за свою деятельность самой высокой
-											оценки. Смело могу рекомендовать любому человеку, которому нужен
-											гарантированный результат. </p>
-									</section>
-									<section class="feedback__row"> <a
-											href="https://yandex.ru/profile/1120413961?intent=reviews&utm_source=badge&utm_medium=rating&utm_campaign=v1"
-											class="feedback__btn">
-											Читать все отзыв в
-											<mark class="feedback__btn_marked">Я</mark>ндексе
-										</a> </section>
-								</article>
-								<article class="swiper-slide feedback feedbacks__slide">
-									<section class="feedback__row feedback__row_user">
-										<div class="feedback__img-section"> <img src="assets/images/m_o.png" alt=""
-												class="feedback__avatar-img" /> </div>
-										<div class="feedback__user-section">
-											<h5 class="feedback__user-name">Максим Мягков</h5>
-											<p class="feedback__user-role">Знаток города 1 уровня</p>
-										</div>
-									</section>
-									<section class="feedback__row">
-										<div class="feedback__rate"> <img src="assets/images/rate-img.svg" alt=""
-												class="feedback__rate-img" /> <span class="feedback__date"> 14 декабря
-												2022 </span> </div>
-										<p class="feedback__text"> Хочу выразить большую благодарность Максиму,с самого
-											начала нашего с ним общения,оказал необходимую консультацию и качественную
-											консультацию,в кротчайщие сроки предложил варианты сделки на которые я мог
-											расчитывать с учетом моей непростой ситуации по кредитной
-											истории,предложенные Максимом условия были привлекателтны на столько,что в
-											них с первого раза не веришь исходя из предложений посредников... </p>
-									</section>
-									<section class="feedback__row"> <a
-											href="https://yandex.ru/profile/1120413961?intent=reviews&utm_source=badge&utm_medium=rating&utm_campaign=v1"
-											class="feedback__btn">
-											Читать все отзыв в
-											<mark class="feedback__btn_marked">Я</mark>ндексе
-										</a> </section>
-								</article>
-								<article class="swiper-slide feedback feedbacks__slide">
-									<section class="feedback__row feedback__row_user">
-										<div class="feedback__img-section feedback__img-section_pink"> В </div>
-										<div class="feedback__user-section">
-											<h5 class="feedback__user-name">
-
-												Егор Ч.
-											</h5>
-											<p class="feedback__user-role"> Знаток города 2 уровня </p>
-										</div>
-									</section>
-									<section class="feedback__row">
-										<div class="feedback__rate"> <img src="assets/images/rate-img.svg" alt=""
-												class="feedback__rate-img"> <span class="feedback__date">
-												11 апреля 2021
-											</span> </div>
-										<p class="feedback__text"> Наше знакомство с Максимом началось с не самой
-											приятной финансовой ситуации ,в моем деле.Данный человек подобрал правельные
-											слова ,подход ,а самое главное людей и способ для решения моей
-											проблемы.Учитывая очень сложные составляющие моего уровнения ,он,не самым
-											быстрым , но главное работающим способом достиг нужного мне
-											резуальта.Огромное спасибо Максим , надеюсь что больше не попаду в подобную
-											ситуацию, но если вдруг ….. то кончно же первый человек который всплывет в
-											голове это вы. В заклюяение : уникальный специальст знающий свое дело.
-											Огромное спасибо... </p>
-									</section>
-									<section class="feedback__row"> <a href="#" class="feedback__btn">
-											Читать отзыв в <mark class="feedback__btn_marked">Я</mark>ндексе
-										</a> </section>
-								</article>
-								<article class="swiper-slide feedback feedbacks__slide">
-									<section class="feedback__row feedback__row_user">
-										<div class="feedback__img-section feedback__img-section_purple"> Г </div>
-										<div class="feedback__user-section">
-											<h5 class="feedback__user-name">
-												Александр Демков
-											</h5>
-											<p class="feedback__user-role">Знаток города 11 уровня </p>
-										</div>
-									</section>
-									<section class="feedback__row">
-										<div class="feedback__rate"> <img src="assets/images/rate-img.svg" alt=""
-												class="feedback__rate-img"> <span class="feedback__date">
-												15 декабря 2022
-											</span> </div>
-										<p class="feedback__text"> Здравствуйте уважаемые дамы и господа. Если вы попали
-											на сайт этой компании, то смею предположить, что у Вас как и у меня в жизни
-											сложилась крайне тяжёлая финансовая ситуация. А какой выход из этого? Кредит
-											или займ. Но как правило банк либо отказывает, либо предлагает сумму не ту
-											которая нам нужна. Такая же история была и у меня. Обратившись в несколько
-											брокерских агенств по кредитованию, понял что тяжело найти честного агента.
-											Практически везде обман и развод на деньги. И тут я случайно... </p>
-									</section>
-									<section class="feedback__row"> <a href="#" class="feedback__btn">
-											Читать отзыв в <mark class="feedback__btn_marked">Я</mark>ндексе
-										</a> </section>
-								</article>
-								<article class="swiper-slide feedback feedbacks__slide">
-									<section class="feedback__row feedback__row_user">
-										<div class="feedback__img-section"> <img src="assets/images/maria.png" alt="">
-										</div>
-										<div class="feedback__user-section">
-											<h5 class="feedback__user-name">
-												Мария Емельянова
-											</h5>
-											<p class="feedback__user-role"> Знаток города 11 уровня </p>
-										</div>
-									</section>
-									<section class="feedback__row">
-										<div class="feedback__rate"> <img src="assets/images/rate-img.svg" alt=""
-												class="feedback__rate-img"> <span class="feedback__date">
-												15 декабря 2022
-											</span> </div>
-										<p class="feedback__text"> У меня не очень хорошая кредитная история,
-											потребовался ипотечный кредит. Не могла найти банк, который бы одобрил
-											нужную сумму. Максим мне очень помог, подобрал банк, полностью подготовил к
-											сделке (от документов до правильного ведения переговоров). Благодаря его
-											работе, кредит одобрили и сегодня получила деньги. Еще раз огромное спасибо
-											за профессионализм и отдельная благодарность за оперативность. Все было
-											сделано максимально быстро. </p>
-									</section>
-									<section class="feedback__row"> <a href="#" class="feedback__btn">
-											Читать отзыв в <mark class="feedback__btn_marked">Я</mark>ндексе
-										</a> </section>
-								</article>
-							</div>
-							<div class="flex feedbacks__pagination"></div>
-						</section>
-						<div class="flex feedbacks__btn-wrapper"> <a
-								href="https://yandex.ru/profile/1120413961?intent=reviews&utm_source=badge&utm_medium=rating&utm_campaign=v1"
-								class="feedbacks__btn">
-								Читать все отзывы в
-								<mark class="feedbacks__btn_marked">Я</mark>ндексе
-							</a> </div>
-					</div>
-				</section>
 				<!-- Tasks End -->
 				<section class="blog" id="blog">
 					<div class="container">
@@ -1149,7 +707,7 @@
 								</li>
 							</ul>
 						</section>
-						<section class="footer__column contact_f">
+						<section class="footer__column">
 							<ul class="footer__link-list">
 								<li class="footer__link-item">
 									<h4 class="footer__link-list-title">Контакты</h4>
@@ -1195,20 +753,18 @@
 				<div class="modal-window drop-down-modal hidden">
 					<div class="drop-down-modal__wrapper">
 						<ul class="drop-down-modal__link-list">
-							<li class="drop-down-modal__link-item"> <a href="#first-link" class="drop-down-modal__link">
-									Займы </a> </li>
-							<li class="drop-down-modal__link-item"> <a href="#second-link"
+							<li class="drop-down-modal__link-item"> <a href="##intro" class="drop-down-modal__link">
+									Главная </a> </li>
+							<li class="drop-down-modal__link-item"> <a href="#achivements"
 									class="drop-down-modal__link">
-									Рефинансирование
+									Почему мы?
 								</a> </li>
-							<li class="drop-down-modal__link-item"> <a href="#third-link" class="drop-down-modal__link">
-									Перезалог
+							<li class="drop-down-modal__link-item"> <a href="#products" class="drop-down-modal__link">
+									Продукты
 								</a> </li>
-							<li class="drop-down-modal__link-item"> <a
-									href="https://yandex.uz/profile/1120413961?intent=reviews&utm_source=badge&utm_medium=rating&utm_campaign=v1"
-									class="drop-down-modal__link">
-									Отзывы Яндекс
-								</a> </li>
+							<li class="drop-down-modal__link-item"> <a href="#blog" class="drop-down-modal__link">
+								Вконтакте
+							</a> </li>
 						</ul>
 						<address class="drop-down-modal__contacts">
 							<a href="tel:+74956427324" class="drop-down-modal__number-phone">
@@ -1239,6 +795,9 @@
 				<div class="modal-window modal-window_first hidden" id="modal-main">
 					<div class="modal-window__wrapper">
 						<div class="modal-window__wrapper-2">
+							<button class="modal_close modal_close-main">
+								<img src="assets/images/х.svg" alt="" />
+							</button>
 
 							<h3 class="modal-window__title">
 								Заполните форму, чтобы 
@@ -1279,15 +838,16 @@
 				</div>
 				<div class="modal-window modal-window_thank hidden" id="modal-thank">
 					<div class="modal-window__wrapper">
-						<h3 class="modal-window__title">
-							Спасибо, за оставленную заявку
+						<div class="modal-window__wrapper-2">
 							<button class="modal_close close_thank">
 								<img src="assets/images/х.svg" alt="" />
 							</button>
-						</h3>
-						<p class="modal-window__soc-text">Мы перезвоним вам в течение 10 минут</p>
-						<img src="assets/images/modal_thank.png" alt="modal-thank">
-						<button class="close_thank_modal modal-window__btn">на главную</button>
+							<h3 class="modal-window__title">Спасибо, за оставленную заявку</h3>
+							<p class="modal-window__subtitle"> Мы перезвоним вам в течение <span>10 минут</span> </p>
+							<div class="modal-window__img-wrapper"> <img src="assets/images/modal-img-1.svg" alt=""
+									class="modal-window__img" /> </div>
+							<button class="modal-window__btn">на главную</button>
+						</div>
 					</div>
 				</div>
 				<div class="modal-window modal-window_first hidden" id="modal-direktor">
@@ -1516,6 +1076,9 @@
 
 				<div class="feedbacks modal-window modal-window_feedbacks hidden">
 					<div class="container modal-window__wrapper">
+						<button class="modal_close modal_close-feedbacks">
+							<img src="assets/images/х.svg" alt="" />
+						</button>
 						<div class="modal-window__wrapper-2">
 							<header class="section-header feedbacks__header">
 								<h2 class="title section-header__title">отзывы наших клиентов</h2>

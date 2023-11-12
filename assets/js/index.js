@@ -17,6 +17,7 @@ const modalOpenButtons = Array.from(
 
 const feedbackOpenBtn = document.querySelector(".home__achivement_marked");
 const feedbackModal = document.querySelector(".modal-window_feedbacks");
+const feedbackCloseBtn = document.querySelector(".modal_close-feedbacks");
 const calculatorOpenBtns = document.querySelectorAll(".product__btn-1");
 const calculatorCloseBtn = document.querySelector(".modal_close-calculator");
 const calculatorModal = document.querySelector(".modal-window_calculator");
@@ -64,6 +65,11 @@ function hiddenModal(modal) {
 
 feedbackOpenBtn.addEventListener("click", (event) => {
     openModal(feedbackModal);
+    event.preventDefault();
+});
+
+feedbackCloseBtn.addEventListener("click", (event) => {
+    hiddenModal(feedbackModal);
     event.preventDefault();
 });
 
@@ -165,7 +171,7 @@ modalClosee_thank.addEventListener("click", function (e) {
 let modalClosee_thank_btn = document.querySelector(
     ".close_thank_modal.modal-window__btn"
 );
-modalClosee_thank_btn.addEventListener("click", function (e) {
+modalClosee_thank_btn?.addEventListener("click", function (e) {
     document.querySelector("#modal-thank").classList.add("hidden");
 });
 
@@ -180,6 +186,10 @@ modalClose.forEach((item) => {
 dropDownModalBtn.addEventListener("click", (event) => {
     dropDownModal.classList.remove("hidden");
     event.preventDefault();
+});
+document.querySelector(".calculator__btn").addEventListener("click", () => {
+    modalWindows.forEach(item => item.classList.add("hidden"));
+    document.querySelector("#modal-thank").classList.remove("hidden");
 });
 
 // tabButtons.forEach((item) => {
@@ -384,222 +394,223 @@ let buttonModalName = document.getElementById("name-input");
 let persentPerMonth = 11 / 100 / 12;
 //range style for month
 //annuity loan schedule formula: get persent per month 8/100/12, then CreditSum * (persent per month + (persent per month / ((1 + persent per month) in credit time degree) - 1))
-document.getElementById("month").oninput = function () {
-    let creditTime = document.getElementById("month").value * 12;
-    // let valueLine = (this.value - this.min) / (this.max - this.min) * 100
-    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
-    if (this.value <= 4 || (this.value >= 21 && this.value <= 24)) {
-        this.previousElementSibling.textContent = this.value + " год";
-        document.querySelector("#time").innerHTML = this.value + " год";
-    } else {
-        this.previousElementSibling.textContent = this.value + " лет";
-        document.querySelector("#time").innerHTML = this.value + " лет";
-    }
-    //sum on changing
-    document.getElementById("amount-1").textContent = Math.round(
-        Number(document.getElementById("price").value) *
-            (persentPerMonth +
-                persentPerMonth /
-                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
-    );
-    document.getElementById("amount-1").textContent =
-        document
-            .getElementById("amount-1")
-            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
-};
+// document.querySelector("#month").oninput = function () {
+//     console.log("ff");
+//     let creditTime = document.getElementById("month").value * 12;
+//     // let valueLine = (this.value - this.min) / (this.max - this.min) * 100
+//     // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+//     if (this.value <= 4 || (this.value >= 21 && this.value <= 24)) {
+//         this.previousElementSibling.textContent = this.value + " год";
+//         document.querySelector("#time").innerHTML = this.value + " год";
+//     } else {
+//         this.previousElementSibling.textContent = this.value + " лет";
+//         document.querySelector("#time").innerHTML = this.value + " лет";
+//     }
+//     //sum on changing
+//     document.getElementById("amount-1").textContent = Math.round(
+//         Number(document.getElementById("price").value) *
+//             (persentPerMonth +
+//                 persentPerMonth /
+//                     (Math.pow(1 + persentPerMonth, creditTime) - 1))
+//     );
+//     document.getElementById("amount-1").textContent =
+//         document
+//             .getElementById("amount-1")
+//             .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+// };
 
-//range style for price
-document.getElementById("price").oninput = function () {
-    console.log(this.value);
-    let creditTime = document.getElementById("month").value * 12;
-    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
-    let amount = this.value.replace(/(\d)(?=(\d{3})+$)/g, "$1 ");
-    console.log(amount);
-    this.previousElementSibling.setAttribute("value", amount + " ₽");
-    console.log(this.value);
-    //sum on changing
-    document.getElementById("amount-1").textContent = Math.round(
-        Number(this.value) *
-            (persentPerMonth +
-                persentPerMonth /
-                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
-    );
-    document.getElementById("amount-1").textContent =
-        document
-            .getElementById("amount-1")
-            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
-    document.querySelector("#sum").textContent = amount + "  ₽";
-};
+// //range style for price
+// document.getElementById("price").oninput = function () {
+//     console.log(this.value);
+//     let creditTime = document.getElementById("month").value * 12;
+//     // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+//     let amount = this.value.replace(/(\d)(?=(\d{3})+$)/g, "$1 ");
+//     console.log(amount);
+//     this.previousElementSibling.setAttribute("value", amount + " ₽");
+//     console.log(this.value);
+//     //sum on changing
+//     document.getElementById("amount-1").textContent = Math.round(
+//         Number(this.value) *
+//             (persentPerMonth +
+//                 persentPerMonth /
+//                     (Math.pow(1 + persentPerMonth, creditTime) - 1))
+//     );
+//     document.getElementById("amount-1").textContent =
+//         document
+//             .getElementById("amount-1")
+//             .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+//     document.querySelector("#sum").textContent = amount + "  ₽";
+// };
 
-document.getElementById("month-1").oninput = function () {
-    let creditTime = document.getElementById("month-1").value * 12;
-    // let valueLine = (this.value - this.min) / (this.max - this.min) * 100
-    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
-    if (this.value <= 4 || (this.value >= 21 && this.value <= 24)) {
-        this.previousElementSibling.textContent = this.value + " год";
-        document.querySelector("#time-1").textContent = this.value + " год";
-    } else {
-        this.previousElementSibling.textContent = this.value + " лет";
-        document.querySelector("#time-1").textContent = this.value + " лет";
-    }
-    //sum on changing
-    document.getElementById("amount-1-1").textContent = Math.round(
-        Number(document.getElementById("price-1").value) *
-            (persentPerMonth +
-                persentPerMonth /
-                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
-    );
-    document.getElementById("amount-1-1").textContent =
-        document
-            .getElementById("amount-1-1")
-            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
-};
+// document.getElementById("month-1").oninput = function () {
+//     let creditTime = document.getElementById("month-1").value * 12;
+//     // let valueLine = (this.value - this.min) / (this.max - this.min) * 100
+//     // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+//     if (this.value <= 4 || (this.value >= 21 && this.value <= 24)) {
+//         this.previousElementSibling.textContent = this.value + " год";
+//         document.querySelector("#time-1").textContent = this.value + " год";
+//     } else {
+//         this.previousElementSibling.textContent = this.value + " лет";
+//         document.querySelector("#time-1").textContent = this.value + " лет";
+//     }
+//     //sum on changing
+//     document.getElementById("amount-1-1").textContent = Math.round(
+//         Number(document.getElementById("price-1").value) *
+//             (persentPerMonth +
+//                 persentPerMonth /
+//                     (Math.pow(1 + persentPerMonth, creditTime) - 1))
+//     );
+//     document.getElementById("amount-1-1").textContent =
+//         document
+//             .getElementById("amount-1-1")
+//             .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+// };
 
-//range style for price
-document.getElementById("price-1").oninput = function () {
-    let creditTime = document.getElementById("month-1").value * 12;
-    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
-    let amount = this.value.replace(/(\d)(?=(\d{3})+$)/g, "$1 ");
-    this.previousElementSibling.value = amount + "  ₽";
-    //sum on changing
-    document.getElementById("amount-1-1").textContent = Math.round(
-        Number(this.value) *
-            (persentPerMonth +
-                persentPerMonth /
-                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
-    );
-    document.getElementById("amount-1-1").textContent =
-        document
-            .getElementById("amount-1-1")
-            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
-    console.log(amount);
-    document.querySelector("#sum-1").innerHTML = amount + "  ₽";
-};
+// //range style for price
+// document.getElementById("price-1").oninput = function () {
+//     let creditTime = document.getElementById("month-1").value * 12;
+//     // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+//     let amount = this.value.replace(/(\d)(?=(\d{3})+$)/g, "$1 ");
+//     this.previousElementSibling.value = amount + "  ₽";
+//     //sum on changing
+//     document.getElementById("amount-1-1").textContent = Math.round(
+//         Number(this.value) *
+//             (persentPerMonth +
+//                 persentPerMonth /
+//                     (Math.pow(1 + persentPerMonth, creditTime) - 1))
+//     );
+//     document.getElementById("amount-1-1").textContent =
+//         document
+//             .getElementById("amount-1-1")
+//             .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+//     console.log(amount);
+//     document.querySelector("#sum-1").innerHTML = amount + "  ₽";
+// };
 
-document.getElementById("month-2").oninput = function () {
-    let creditTime = document.getElementById("month-2").value * 12;
-    // let valueLine = (this.value - this.min) / (this.max - this.min) * 100
-    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
-    if (this.value <= 4 || (this.value >= 21 && this.value <= 24)) {
-        this.previousElementSibling.textContent = this.value + " год";
-        document.querySelector("#time-2").textContent = this.value + " год";
-    } else {
-        this.previousElementSibling.textContent = this.value + " лет";
-        document.querySelector("#time-2").textContent = this.value + " лет";
-    }
-    //sum on changing
-    document.getElementById("amount-1-2").textContent = Math.round(
-        Number(document.getElementById("price-2").value) *
-            (persentPerMonth +
-                persentPerMonth /
-                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
-    );
-    document.getElementById("amount-1-2").textContent =
-        document
-            .getElementById("amount-1-2")
-            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
-};
+// document.getElementById("month-2").oninput = function () {
+//     let creditTime = document.getElementById("month-2").value * 12;
+//     // let valueLine = (this.value - this.min) / (this.max - this.min) * 100
+//     // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+//     if (this.value <= 4 || (this.value >= 21 && this.value <= 24)) {
+//         this.previousElementSibling.textContent = this.value + " год";
+//         document.querySelector("#time-2").textContent = this.value + " год";
+//     } else {
+//         this.previousElementSibling.textContent = this.value + " лет";
+//         document.querySelector("#time-2").textContent = this.value + " лет";
+//     }
+//     //sum on changing
+//     document.getElementById("amount-1-2").textContent = Math.round(
+//         Number(document.getElementById("price-2").value) *
+//             (persentPerMonth +
+//                 persentPerMonth /
+//                     (Math.pow(1 + persentPerMonth, creditTime) - 1))
+//     );
+//     document.getElementById("amount-1-2").textContent =
+//         document
+//             .getElementById("amount-1-2")
+//             .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+// };
 
-//range style for price
-document.getElementById("price-2").oninput = function () {
-    let creditTime = document.getElementById("month-2").value * 12;
-    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
-    let amount = this.value.replace(/(\d)(?=(\d{3})+$)/g, "$1 ");
-    this.previousElementSibling.value = amount + "  ₽";
-    //sum on changing
-    document.getElementById("amount-1-2").textContent = Math.round(
-        Number(this.value) *
-            (persentPerMonth +
-                persentPerMonth /
-                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
-    );
-    document.getElementById("amount-1-2").textContent =
-        document
-            .getElementById("amount-1-2")
-            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
-    document.querySelector("#sum-2").textContent = amount + "  ₽";
-};
+// //range style for price
+// document.getElementById("price-2").oninput = function () {
+//     let creditTime = document.getElementById("month-2").value * 12;
+//     // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+//     let amount = this.value.replace(/(\d)(?=(\d{3})+$)/g, "$1 ");
+//     this.previousElementSibling.value = amount + "  ₽";
+//     //sum on changing
+//     document.getElementById("amount-1-2").textContent = Math.round(
+//         Number(this.value) *
+//             (persentPerMonth +
+//                 persentPerMonth /
+//                     (Math.pow(1 + persentPerMonth, creditTime) - 1))
+//     );
+//     document.getElementById("amount-1-2").textContent =
+//         document
+//             .getElementById("amount-1-2")
+//             .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+//     document.querySelector("#sum-2").textContent = amount + "  ₽";
+// };
 
-document.getElementById("input-3").oninput = function () {
-    let creditTime = document.getElementById("month-2").value * 12;
-    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
-    let amount = this.value
-        .replace(/(\d)(?=(\d{3})+$)/g, "$1 ")
-        .replace(" ₽", "");
-    this.previousElementSibling.value = amount + "  ₽";
-    //sum on changing
-    document.getElementById("amount-1-2").textContent = Math.round(
-        Number(
-            this.value
-                .replace(" ", "")
-                .replace("  ", "")
-                .replace(" ₽", "")
-                .replace(" ", "")
-        ) *
-            (persentPerMonth +
-                persentPerMonth /
-                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
-    );
-    document.getElementById("amount-1-2").textContent =
-        document
-            .getElementById("amount-1-2")
-            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
-    document.querySelector("#sum-2").textContent = amount + "  ₽";
-};
+// document.getElementById("input-3").oninput = function () {
+//     let creditTime = document.getElementById("month-2").value * 12;
+//     // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+//     let amount = this.value
+//         .replace(/(\d)(?=(\d{3})+$)/g, "$1 ")
+//         .replace(" ₽", "");
+//     this.previousElementSibling.value = amount + "  ₽";
+//     //sum on changing
+//     document.getElementById("amount-1-2").textContent = Math.round(
+//         Number(
+//             this.value
+//                 .replace(" ", "")
+//                 .replace("  ", "")
+//                 .replace(" ₽", "")
+//                 .replace(" ", "")
+//         ) *
+//             (persentPerMonth +
+//                 persentPerMonth /
+//                     (Math.pow(1 + persentPerMonth, creditTime) - 1))
+//     );
+//     document.getElementById("amount-1-2").textContent =
+//         document
+//             .getElementById("amount-1-2")
+//             .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+//     document.querySelector("#sum-2").textContent = amount + "  ₽";
+// };
 
-document.getElementById("input-2").oninput = function () {
-    let creditTime = document.getElementById("month-1").value * 12;
-    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
-    let amount = this.value
-        .replace(/(\d)(?=(\d{3})+$)/g, "$1 ")
-        .replace(" ₽", "");
-    this.previousElementSibling.value = amount + "  ₽";
-    //sum on changing
-    document.getElementById("amount-1-1").textContent = Math.round(
-        Number(
-            this.value
-                .replace(" ", "")
-                .replace("  ", "")
-                .replace(" ₽", "")
-                .replace(" ", "")
-        ) *
-            (persentPerMonth +
-                persentPerMonth /
-                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
-    );
-    document.getElementById("amount-1-1").textContent =
-        document
-            .getElementById("amount-1-1")
-            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
-    document.querySelector("#sum-1").textContent = amount + "  ₽";
-};
+// document.getElementById("input-2").oninput = function () {
+//     let creditTime = document.getElementById("month-1").value * 12;
+//     // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+//     let amount = this.value
+//         .replace(/(\d)(?=(\d{3})+$)/g, "$1 ")
+//         .replace(" ₽", "");
+//     this.previousElementSibling.value = amount + "  ₽";
+//     //sum on changing
+//     document.getElementById("amount-1-1").textContent = Math.round(
+//         Number(
+//             this.value
+//                 .replace(" ", "")
+//                 .replace("  ", "")
+//                 .replace(" ₽", "")
+//                 .replace(" ", "")
+//         ) *
+//             (persentPerMonth +
+//                 persentPerMonth /
+//                     (Math.pow(1 + persentPerMonth, creditTime) - 1))
+//     );
+//     document.getElementById("amount-1-1").textContent =
+//         document
+//             .getElementById("amount-1-1")
+//             .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+//     document.querySelector("#sum-1").textContent = amount + "  ₽";
+// };
 
-document.getElementById("input-1").oninput = function () {
-    let creditTime = document.getElementById("month-1").value * 12;
-    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
-    let amount = this.value
-        .replace(/(\d)(?=(\d{3})+$)/g, "$1 ")
-        .replace(" ₽", "");
-    this.previousElementSibling.value = amount + "  ₽";
-    //sum on changing
-    document.getElementById("amount-1").textContent = Math.round(
-        Number(
-            this.value
-                .replace(" ", "")
-                .replace("  ", "")
-                .replace(" ₽", "")
-                .replace(" ", "")
-        ) *
-            (persentPerMonth +
-                persentPerMonth /
-                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
-    );
-    document.getElementById("amount-1").textContent =
-        document
-            .getElementById("amount-1")
-            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
-    document.querySelector("#sum").textContent = amount + "  ₽";
-};
+// document.getElementById("input-1").oninput = function () {
+//     let creditTime = document.getElementById("month-1").value * 12;
+//     // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+//     let amount = this.value
+//         .replace(/(\d)(?=(\d{3})+$)/g, "$1 ")
+//         .replace(" ₽", "");
+//     this.previousElementSibling.value = amount + "  ₽";
+//     //sum on changing
+//     document.getElementById("amount-1").textContent = Math.round(
+//         Number(
+//             this.value
+//                 .replace(" ", "")
+//                 .replace("  ", "")
+//                 .replace(" ₽", "")
+//                 .replace(" ", "")
+//         ) *
+//             (persentPerMonth +
+//                 persentPerMonth /
+//                     (Math.pow(1 + persentPerMonth, creditTime) - 1))
+//     );
+//     document.getElementById("amount-1").textContent =
+//         document
+//             .getElementById("amount-1")
+//             .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+//     document.querySelector("#sum").textContent = amount + "  ₽";
+// };
 
 //data for copyright
 let date = new Date();
@@ -767,41 +778,41 @@ function onSubmit(btn) {
     });
 }
 0;
-let tasks = document.querySelectorAll(".tasks .swiper-slide");
-tasks.forEach(function (item) {
-    console.log(item.offsetHeight);
-    // console.log(item.offsetParent)
-});
-let buttonProjectsToggler = document.querySelector(".link_project3 p");
-buttonProjectsToggler.addEventListener("click", function (e) {
-    console.log("1");
-    let content = this.nextElementSibling;
-    // console.log(clickedBtn.nextElementSibling)
-    if (content.style.maxHeight) {
-        //this is if the accordion is open
-        content.style.maxHeight = null;
-        content.classList.remove("is-open");
-    } else {
-        //if the accordion is currently closed
-        content.style.maxHeight = content.scrollHeight + "px";
-        content.classList.add("is-open");
-    }
-});
-let buttonProjectsToggler2 = document.querySelector(".mini-acc");
-buttonProjectsToggler2.addEventListener("click", function (e) {
-    console.log("1");
-    let content = this.nextElementSibling;
-    console.log(this.nextElementSibling);
-    if (content.style.maxHeight) {
-        //this is if the accordion is open
-        content.style.maxHeight = null;
-        content.classList.remove("is-open");
-    } else {
-        //if the accordion is currently closed
-        content.style.maxHeight = content.scrollHeight + "px";
-        content.classList.add("is-open");
-    }
-});
+// let tasks = document.querySelectorAll(".tasks .swiper-slide");
+// tasks.forEach(function (item) {
+//     console.log(item.offsetHeight);
+//     // console.log(item.offsetParent)
+// });
+// let buttonProjectsToggler = document.querySelector(".link_project3 p");
+// buttonProjectsToggler.addEventListener("click", function (e) {
+//     console.log("1");
+//     let content = this.nextElementSibling;
+//     // console.log(clickedBtn.nextElementSibling)
+//     if (content.style.maxHeight) {
+//         //this is if the accordion is open
+//         content.style.maxHeight = null;
+//         content.classList.remove("is-open");
+//     } else {
+//         //if the accordion is currently closed
+//         content.style.maxHeight = content.scrollHeight + "px";
+//         content.classList.add("is-open");
+//     }
+// });
+// let buttonProjectsToggler2 = document.querySelector(".mini-acc");
+// buttonProjectsToggler2.addEventListener("click", function (e) {
+//     console.log("1");
+//     let content = this.nextElementSibling;
+//     console.log(this.nextElementSibling);
+//     if (content.style.maxHeight) {
+//         //this is if the accordion is open
+//         content.style.maxHeight = null;
+//         content.classList.remove("is-open");
+//     } else {
+//         //if the accordion is currently closed
+//         content.style.maxHeight = content.scrollHeight + "px";
+//         content.classList.add("is-open");
+//     }
+// });
 let calculatorInputRange = document.querySelectorAll(
     ".calculator-input__range"
 );
@@ -815,6 +826,7 @@ $(".calculator-input__range").on("change input", function () {
     } else {
         fill.width(width);
     }
+    console.log(this.value);
 });
 
 $(".calculator-input__sum").on("input", function () {
@@ -852,6 +864,53 @@ $(":input").inputmask({
     max: 25000000,
 });
 $("#phone-input").inputmask("+7 999 999-99-99");
+
+document.getElementById("month").oninput = function () {
+    let creditTime = document.getElementById("month").value * 12;
+    // let valueLine = (this.value - this.min) / (this.max - this.min) * 100
+    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+    if (this.value <= 4 || (this.value >= 21 && this.value <= 24)) {
+        this.previousElementSibling.textContent = this.value + " год";
+        document.querySelector("#time").innerHTML = this.value + " год";
+    } else {
+        this.previousElementSibling.textContent = this.value + " лет";
+        document.querySelector("#time").innerHTML = this.value + " лет";
+    }
+    //sum on changing
+    document.getElementById("amount-1").textContent = Math.round(
+        Number(document.getElementById("price").value) *
+            (persentPerMonth +
+                persentPerMonth /
+                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
+    );
+    document.getElementById("amount-1").textContent =
+        document
+            .getElementById("amount-1")
+            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+};
+
+//range style for price
+document.getElementById("price").oninput = function () {
+    console.log(this.value);
+    let creditTime = document.getElementById("month").value * 12;
+    // this.style.background = 'linear-gradient(to right, #50DFB2 0%, #50DFB2 ' + valueLine + '%, #fff ' + valueLine + '%, white 100%)';
+    let amount = this.value.replace(/(\d)(?=(\d{3})+$)/g, "$1 ");
+    console.log(amount);
+    this.previousElementSibling.setAttribute("value", amount + " ₽");
+    console.log(this.value);
+    //sum on changing
+    document.getElementById("amount-1").textContent = Math.round(
+        Number(this.value) *
+            (persentPerMonth +
+                persentPerMonth /
+                    (Math.pow(1 + persentPerMonth, creditTime) - 1))
+    );
+    document.getElementById("amount-1").textContent =
+        document
+            .getElementById("amount-1")
+            .textContent.replace(/(\d)(?=(\d{3})+$)/g, "$1 ") + "  ₽";
+    document.querySelector("#sum").textContent = amount + "  ₽";
+};
 
 // $("#submit-button").click(function (e) {
 //     e.preventDefault();
