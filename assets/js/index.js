@@ -24,6 +24,8 @@ const calculatorModal = document.querySelector(".modal-window_calculator");
 const tasksOpenBtn = document.querySelector(".footer__link_tasks");
 const tasksCloseBtn = document.querySelector(".modal_close-tasks");
 const tasksModal = document.querySelector(".modal-window_tasks");
+const homeMessage = document.querySelector(".home__info-message");
+const homeSkipBtn = document.querySelector(".info-message__skip_home");
 
 // Tabs Variables
 
@@ -62,6 +64,11 @@ function hiddenModal(modal) {
 
 
 // Event Listeners
+
+homeSkipBtn.addEventListener("click", (event) => {
+    homeMessage.classList.add("none");
+    event.preventDefault();
+});
 
 feedbackOpenBtn.addEventListener("click", (event) => {
     openModal(feedbackModal);
