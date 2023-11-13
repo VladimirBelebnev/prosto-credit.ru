@@ -2766,6 +2766,9 @@ swiper-container {
   .achivement__title {
     margin-bottom: 10px;
   }
+  .calculator__input_first {
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media all and (max-width: 1300px) {
