@@ -80,6 +80,17 @@ document.querySelector(".achivements-2__subtitle_link").addEventListener("click"
     event.preventDefault();
 });
 
+document.querySelector(".header__link_feedbacks").addEventListener("click", (event) => {
+    openModal(feedbackModal);
+    event.preventDefault();
+});
+
+document.querySelector(".drop-down-modal__link_feedbacks").addEventListener("click", (event) => {
+    Array.from(modalWindows).forEach(item => item.classList.add("hidden"));
+    openModal(feedbackModal);
+    event.preventDefault();
+});
+
 feedbackCloseBtn.addEventListener("click", (event) => {
     hiddenModal(feedbackModal);
     event.preventDefault();
