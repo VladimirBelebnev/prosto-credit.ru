@@ -516,6 +516,17 @@ video {
 .modal-window_tasks .modal-window__wrapper {
   padding-top: 6rem;
 }
+.scroll-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#second-link {
+  top: -90px;
+}
+#third-link {
+  top: -90px;
+}
 
 .input {
   width: 100%;
@@ -966,6 +977,7 @@ swiper-container {
   background-position: 110px 20px;
   background-repeat: no-repeat;
   padding-top: 80px;
+  position: relative;
 }
 .products__header {
   margin-bottom: 60px;
@@ -989,6 +1001,7 @@ swiper-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 .product__row:first-child {
   display: -ms-grid;
@@ -1077,9 +1090,6 @@ swiper-container {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-.product__link:hover {
-  opacity: 0.5;
-}
 .product__title {
   font-weight: 700;
   font-size: 2.25rem;
@@ -1127,13 +1137,14 @@ swiper-container {
   line-height: normal;
 }
 .product__info-text {
-  /* margin-top: 68px; */
-  color: #000;
+  color: #000000;
   font-size: 27px;
   font-family: "Raleway";
-
   font-weight: 500;
   line-height: normal;
+}
+.product__info-text p span {
+  color: #000000 !important;
 }
 .product__btn-1 {
   height: 80px;
@@ -1540,13 +1551,12 @@ margin: 0;
   margin-bottom: 3.12rem;
 }
 .achivements-2__subtitle_link {
-  color: #EF3124;
+  color: #000;
   font-family: Raleway;
   font-size: 2rem;
   font-weight: 700;
   line-height: normal;
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration: underline;
 }
 .achivements-2__subtitle_link:hover {
   text-decoration: underline;
@@ -1661,6 +1671,10 @@ margin: 0;
   line-height: 2.1875rem;
   color: #000000;
   max-width: 470px;
+}
+.achivements-2__subtitle_marked {
+  color: #EF3124;
+  background: none;
 }
 .gp_footer {
   display: -webkit-box;
@@ -2584,6 +2598,7 @@ swiper-container {
 .footer__soc-links_mobile {
   margin-top: 2.5rem;
   margin-bottom: 3.75rem;
+  display: none;
 }
 
 @media all and (max-width: 1600px) {
@@ -3869,6 +3884,15 @@ swiper-container {
   .calculator .modal_close {
     left: 1.5rem;
   }
+  .footer__soc-links_mobile {
+    display: flex !important;
+  }
+  .footer__soc-links_mobile > .footer__soc-link {
+    display: inline-flex;
+  }
+  .footer__soc-link_mobile {
+    display: none;
+  }
 }
 @media all and (max-width: 800px) {
   .achivements-1__items {
@@ -4755,14 +4779,6 @@ swiper-container {
     max-width: 100%;
   }
 
-  .footer__soc-links_mobile {
-    display: flex !important;
-  }
-
-  .footer__soc-links_mobile > .footer__soc-link {
-    display: inline-flex;
-  }
-
   .achivements-1 {
     padding-top: 2.5rem !important;
     padding-bottom: 7.16rem !important;
@@ -4812,7 +4828,9 @@ swiper-container {
   .feedback, .task{
     padding: 15px !important;
   }
- 
+  .footer__row:first-child {
+    gap: 2.26rem 2.87rem;
+  }
 }
 .certificates__slide,
 .companies__items .companies__item-wrapper {
