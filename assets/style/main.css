@@ -3884,15 +3884,6 @@ swiper-container {
   .calculator .modal_close {
     left: 1.5rem;
   }
-  .footer__soc-links_mobile {
-    display: flex !important;
-  }
-  .footer__soc-links_mobile > .footer__soc-link {
-    display: inline-flex;
-  }
-  .footer__soc-link_mobile {
-    display: none;
-  }
 }
 @media all and (max-width: 800px) {
   .achivements-1__items {
@@ -4011,6 +4002,18 @@ swiper-container {
   }
   .footer__row:first-child .footer__column:nth-child(3) {
     grid-area: footer3;
+  }
+  .footer__soc-links_mobile {
+    display: flex !important;
+  }
+  .footer__soc-links_mobile > .footer__soc-link {
+    display: inline-flex;
+  }
+  .footer__soc-link_mobile {
+    display: none;
+  }
+  .footer__row:last-child {
+    margin-top: 2.5rem;
   }
 }
 
