@@ -1186,6 +1186,10 @@ swiper-container {
 .product__info-text p span {
   color: #000000 !important;
 }
+
+.product__info-text p a {
+  color: #000000 !important;
+}
 .product__btn-1 {
   height: 80px;
   padding: 26px;
