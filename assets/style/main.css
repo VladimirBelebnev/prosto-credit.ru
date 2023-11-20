@@ -760,9 +760,15 @@ video {
           align-items: stretch;
   margin-bottom: 4.31rem;
   margin-top: 3.25rem;
+  gap: 1rem;
+}
+.home_img {
+  display: flex;
+  align-items: flex-end;
 }
 .home_img img {
-  height: 100%;
+  height: auto;
+  width: 40rem;
 }
 .home__offer {
   /* margin-bottom: 69px; */
@@ -1123,6 +1129,16 @@ swiper-container {
   top: -2px;
   padding: 40px 40px !important;
 }
+.calculator__offer-row_double {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row !important;
+}
+.calculator__offer-row-wrapper_second,
+.calculator__offer-row-wrapper_second .text_answer {
+  text-align: right;
+}
 .products__items {
   position: relative;
 }
@@ -1282,9 +1298,13 @@ swiper-container {
   color: #000000;
 }
 .calculator__offer {
+  background-image: url("../images/percent.svg");
+  background-size: 16.1875rem 6.25rem;
+  background-position: center right 2rem;
+  background-repeat: no-repeat;
   padding: 28px 20px;
   border-radius: 18.471px;
-  background: #ffd334;
+  background-color: #ffd334;
   -webkit-box-shadow: -2.841648578643799px 2.841648578643799px 2.841648578643799px 0px
     rgba(0, 0, 0, 0.25);
           box-shadow: -2.841648578643799px 2.841648578643799px 2.841648578643799px 0px
@@ -1338,7 +1358,7 @@ swiper-container {
 }
 .text_answer {
   color: #000;
-  text-align: center;
+  text-align: left;
   font-family: "Raleway";
   font-size: 27.783px;
   font-weight: 700;
@@ -2642,8 +2662,8 @@ swiper-container {
   }
 
   .home_img img {
-    width: 42.6875rem;
-    height: 30.07419rem;
+    width: 37.6875rem;
+    height: auto;
   }
 
   .home__btn {
@@ -2847,13 +2867,13 @@ swiper-container {
     width: 4.75rem;
   }
 
-  .footer__soc-link {
+  /* .footer__soc-link {
     display: none;
   }
 
   .footer__soc-link_mobile {
     display: inline-block;
-  }
+  } */
 
   .footer__soc-link_mobile img {
     width: 3rem;
@@ -2942,7 +2962,13 @@ swiper-container {
   }
   .calc_2 {
     padding: 69px 40px !important;
+  } 
+  .input {
+    padding: 18px 40px;
   }
+  /* .modal-window__wrapper {
+    min-height: auto;
+  } */
   .modal-window__title {
     line-height: 25px;
     font-size: 26px;
@@ -2950,12 +2976,6 @@ swiper-container {
   .modal-window__input:first-child {
     margin-bottom: 20px;
   }
-  .input {
-    padding: 18px 40px;
-  }
-  /* .modal-window__wrapper {
-    min-height: auto;
-  } */
   .modal-window__checkbox-section {
     margin-top: 20px;
     margin-bottom: 26px;
@@ -3089,10 +3109,10 @@ swiper-container {
     height: auto;
     padding: 18px;
   }
-  .home__title {
+  /* .home__title {
     font-size: 52px;
     margin-bottom: 20px;
-  }
+  } */
   .home__subtilte {
     font-size: 22px;
     max-width: 596px;
@@ -3233,40 +3253,8 @@ swiper-container {
     overflow-y: auto;
     overflow-x: hidden;
   }
-
-  .home_img {
-    display: none;
-  }
-  .home {
-    background-image: url("../images/home-background-img.png");
-    padding-top: 155px;
-  }
-  .home__subtilte {
-    color: var(--black, #1d1d1d);
-    font-size: 17px;
-    font-family: "Raleway";
-    line-height: normal;
-    font-weight: 500;
-  }
-  .home {
-    margin-bottom: 0;
-    padding-bottom: 60px;
-    background-position: center bottom -60px;
-    background-blend-mode: lighten;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
 }
 @media all and (max-width: 1250px) {
-  .home__row-items {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    gap: 30px;
-  }
   .achivements-1__items {
     -webkit-column-gap: 100px;
     -moz-column-gap: 100px;
@@ -3304,6 +3292,39 @@ swiper-container {
   }
   .achivements-1__items .achivement {
     width: 100%;
+  }
+}
+@media all and (max-width: 1200px) {
+  .home_img {
+    display: none;
+  }
+  .home {
+    background-image: url("../images/home-background-img.png");
+    padding-top: 155px;
+  }
+  .home__subtilte {
+    color: var(--black, #1d1d1d);
+    font-size: 17px;
+    font-family: "Raleway";
+    line-height: normal;
+    font-weight: 500;
+  }
+  .home {
+    margin-bottom: 0;
+    padding-bottom: 60px;
+    background-position: center bottom -60px;
+    background-blend-mode: lighten;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .home__row-items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    gap: 30px;
   }
 }
 @media all and (max-width: 1100px) {
@@ -3684,6 +3705,10 @@ swiper-container {
   .questions {
     background-image: none;
   }
+  .feedback,
+  .task {
+    padding: 24px !important;
+  }
   .modal-window__wrapper {
     /* min-height: auto; */
     border-radius: 20px;
@@ -3695,10 +3720,6 @@ swiper-container {
     height: auto;
     font-size: 18px;
     padding: 18px;
-  }
-  .feedback,
-  .task {
-    padding: 24px !important;
   }
   .modal-window__title {
     font-size: 20px;
@@ -3883,6 +3904,10 @@ swiper-container {
   }
   .calculator .modal_close {
     left: 1.5rem;
+  }
+  .calculator__offer {
+    background-position: center;
+    background-size: 12.9375rem 5rem;
   }
 }
 @media all and (max-width: 800px) {
