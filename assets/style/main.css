@@ -1212,6 +1212,7 @@ swiper-container {
   color: #1e1e1e;
   word-break: break-all;
   min-width: 350px;
+  cursor: pointer;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -2648,6 +2649,12 @@ swiper-container {
   margin-top: 2.5rem;
   margin-bottom: 3.75rem;
   display: none;
+}
+
+@media all and (max-width: 1750px) {
+  .product__link {
+    font-size: 1.2rem;
+  }
 }
 
 @media all and (max-width: 1600px) {
