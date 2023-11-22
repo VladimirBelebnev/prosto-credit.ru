@@ -2619,7 +2619,6 @@ swiper-container {
   color: var(--black, #1d1d1d);
   font-size: 20px;
   font-family: "Raleway";
-
   font-weight: 500;
 }
 .footer__link {
@@ -2932,6 +2931,11 @@ swiper-container {
 
   .footer__row:first-child {
     gap: 5.75rem;
+  }
+
+  .footer__link,
+  .footer__address {
+    font-size: 16px;
   }
 
   .modal-window_first .modal-window__wrapper {
@@ -4091,6 +4095,17 @@ swiper-container {
   }
   .footer__row:last-child {
     margin-top: 2.5rem;
+  }
+  .footer__soc-img {
+    width: 58px;
+  }
+  .footer__soc-links_mobile {
+    display: flex;
+    justify-content: center;
+  }
+  .footer__logo .logo__img {
+    width: 190px;
+    min-width: 190px;
   }
 }
 @media all and (max-width: 700px){
