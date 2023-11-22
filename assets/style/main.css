@@ -2650,6 +2650,9 @@ swiper-container {
   margin-bottom: 3.75rem;
   display: none;
 }
+.footer__column_mobile {
+  display: none;
+}
 
 @media all and (max-width: 1750px) {
   .product__link {
@@ -4053,8 +4056,11 @@ swiper-container {
   .footer__soc-links {
     display: none;
   }
-  .footer__column_contact {
+  .footer__column:not(:first-child) {
     display: none;
+  }
+  .footer__column_mobile {
+    display: flex !important;
   }
   .footer__row:first-child {
         grid-template-areas: "footer1 footer1"
